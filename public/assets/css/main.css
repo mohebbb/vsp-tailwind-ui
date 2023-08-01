@@ -1,0 +1,21 @@
+:root {
+    --plyr-color-main: #de329e;
+}
+
+.bg-mask-icon-white {
+    mask-image: url('/img/bg/smooth-corners-sqaure.svg');
+    -webkit-mask-image: url('/img/bg/smooth-corners-sqaure.svg');
+    -webkit-mask-size: 100%;
+}
+
+.bg-mask-no-repeat {
+    -webkit-mask-repeat: no-repeat;
+}
+
+.bg-mask-center {
+    -webkit-mask-position: center;
+}
+
+body {
+    [x-cloak] { display: none; }
+}

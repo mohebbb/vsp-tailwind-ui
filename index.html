@@ -1,0 +1,236 @@
+{{> layout-header}}
+
+<!-- Header Hero -->
+<!-- <div
+  class="w-full bg-brand-500 bg-hero-pattern-sm bg-cover bg-no-repeat bg-right-center"
+>
+  <div
+    class="w-full bg-gradient-to-l from-brand-500 to-transparent flex relative"
+  >
+    <div class="container mx-auto z-10 md:p-8 p-3 mt-20">
+      <h1 class="text-black text-5xl pb-12 font-bold">نفت هاب</h1>
+      <div class="w-full block">
+        <p class="lg:w-1/2 md:w-1/2 text-white">
+          اساس و پیدایش نفت هاب در گروه صنعتی دانیال موج است.در پی تفاهم نامه ای
+          که میان این گروه صنعتی و پژوهشگاه صنعت نفت منعقد شد ایده طراحی یک
+          پلتفرم مبتنی بر نوآوری باز صرفا در حوزه نفت و گاز و صنایع وابسته کشور،
+          جهت مشارکت حداکثری نخبگان ایرانی از هر جای دنیا و همچنین شرکتهای دانش
+          بنیان آنها شکل گرفت
+        </p>
+      </div>
+
+      <div class="w-full flex mt-7">
+        <a
+          href="#"
+          class="text-brand-500 dark:text-brand-100 bg-white hover:bg-gray-200 focus:ring-4 rounded-lg text-sm px-7 py-2 md:px-12 md:py-2.5 ml-1 md:ml-2 font-bold dark:bg-gray-100 dark:hover:bg-brand-300 focus:outline-none dark:focus:ring-brand-800 shadow-sm"
+          >چالش ها</a
+        >
+        <a
+          href="#"
+          class="text-white border border-white bg-transparent hover:bg-brand-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-4 py-2 md:px-8 font-bold md:py-2.5 mr-1 md:mr-2 dark:bg-brand-100 dark:hover:bg-brand-300 focus:outline-none dark:focus:ring-brand-800 shadow-sm"
+          >برای شرکت ها</a
+        >
+      </div> -->
+
+      <!-- search -->
+<!--       
+      <div class="bg-white rounded-full mt-16 mx-auto max-w-2xl">
+        <div
+          x-data="popup"
+          class="p-2 flex justify-between relative"
+          @click.away="hidden_fast"
+        >
+          <div class="flex w-full">
+            <input
+              x-on:focus="show"
+              type="text"
+              placeholder="جستجو ..."
+              class="rounded-full z-20 p-3 w-full h-10 text-gray-700 focus:border-brand-100 focus:outline-none focus:bg-gray-100"
+            />
+            <div
+              x-show="open"
+              x-transition
+              class="absolute overflow-hidden top-7 right-0 left-0 w-full z-10 bg-white rounded-b-xl pt-5 shadow-lg max-h-80 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 overflow-y-scroll scrollbar-thumb-rounded-full scrollbar-track-rounded-full"
+            >
+              <ul class="divide-y">
+                <li>
+                  <a href="" class="flex p-3 items-center w-full">
+                    <div class="aspect-square">
+                      <img
+                        src="img/photos/companies/003.png"
+                        class="w-16 md:w-16 xl:3-16 shrink-0 h-auto"
+                        alt=""
+                      />
+                    </div>
+                    <div class="flex-col mr-3 w-full">
+                      <h5 class="mb-3 text-gray-600">
+                        سامانه پرنده بدون سرنشین برای بازدید از دکل و تجهیزات
+                        نفت
+                      </h5>
+                      <div class="flex items-center justify-between">
+                        <div
+                          class="bg-gray-100 rounded-full inline px-3 text-gray-700 text-sm h-max"
+                        >
+                          نفت و گاز
+                        </div>
+                        <div class="flex mt-3">
+                          <span class="text-xl flex-row items-e text-gray-400">
+                            <i class="las la-calendar-alt"></i>
+                          </span>
+                          <div class="nline mr-1 text-sm text-gray-400">
+                            35 روز مانده
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="flex p-3 items-center w-full">
+                    <div class="aspect-square">
+                      <img
+                        src="img/photos/companies/003.png"
+                        class="w-16 md:w-16 xl:3-16 shrink-0 h-auto"
+                        alt=""
+                      />
+                    </div>
+                    <div class="flex-col mr-3 w-full">
+                      <h5 class="mb-3 text-gray-600">
+                        سامانه پرنده بدون سرنشین برای بازدید از دکل و تجهیزات
+                        نفت
+                      </h5>
+                      <div class="flex items-center justify-between">
+                        <div
+                          class="bg-gray-100 rounded-full inline px-3 text-gray-700 text-sm h-max"
+                        >
+                          نفت و گاز
+                        </div>
+                        <div class="flex mt-3">
+                          <span class="text-xl flex-row items-e text-gray-400">
+                            <i class="las la-calendar-alt"></i>
+                          </span>
+                          <div class="nline mr-1 text-sm text-gray-400">
+                            35 روز مانده
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="flex p-3 items-center w-full">
+                    <div class="aspect-square">
+                      <img
+                        src="img/photos/companies/003.png"
+                        class="w-16 md:w-16 xl:3-16 shrink-0 h-auto"
+                        alt=""
+                      />
+                    </div>
+                    <div class="flex-col mr-3 w-full">
+                      <h5 class="mb-3 text-gray-600">
+                        سامانه پرنده بدون سرنشین برای بازدید از دکل و تجهیزات
+                        نفت
+                      </h5>
+                      <div class="flex items-center justify-between">
+                        <div
+                          class="bg-gray-100 rounded-full inline px-3 text-gray-700 text-sm h-max"
+                        >
+                          نفت و گاز
+                        </div>
+                        <div class="flex mt-3">
+                          <span class="text-xl flex-row items-e text-gray-400">
+                            <i class="las la-calendar-alt"></i>
+                          </span>
+                          <div class="nline mr-1 text-sm text-gray-400">
+                            35 روز مانده
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="flex p-3 items-center w-full">
+                    <div class="aspect-square">
+                      <img
+                        src="img/photos/companies/003.png"
+                        class="w-16 md:w-16 xl:3-16 shrink-0 h-auto"
+                        alt=""
+                      />
+                    </div>
+                    <div class="flex-col mr-3 w-full">
+                      <h5 class="mb-3 text-gray-600">
+                        سامانه پرنده بدون سرنشین برای بازدید از دکل و تجهیزات
+                        نفت
+                      </h5>
+                      <div class="flex items-center justify-between">
+                        <div
+                          class="bg-gray-100 rounded-full inline px-3 text-gray-700 text-sm h-max"
+                        >
+                          نفت و گاز
+                        </div>
+                        <div class="flex mt-3">
+                          <span class="text-xl flex-row items-e text-gray-400">
+                            <i class="las la-calendar-alt"></i>
+                          </span>
+                          <div class="nline mr-1 text-sm text-gray-400">
+                            35 روز مانده
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="flex p-3 items-center w-full">
+                    <div class="aspect-square">
+                      <img
+                        src="img/photos/companies/003.png"
+                        class="w-16 md:w-16 xl:3-16 shrink-0 h-auto"
+                        alt=""
+                      />
+                    </div>
+                    <div class="flex-col mr-3 w-full">
+                      <h5 class="mb-3 text-gray-600">
+                        سامانه پرنده بدون سرنشین برای بازدید از دکل و تجهیزات
+                        نفت
+                      </h5>
+                      <div class="flex items-center justify-between">
+                        <div
+                          class="bg-gray-100 rounded-full inline px-3 text-gray-700 text-sm h-max"
+                        >
+                          نفت و گاز
+                        </div>
+                        <div class="flex mt-3">
+                          <span class="text-xl flex-row items-e text-gray-400">
+                            <i class="las la-calendar-alt"></i>
+                          </span>
+                          <div class="nline mr-1 text-sm text-gray-400">
+                            35 روز مانده
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <a
+            href="#"
+            class="absolute left-2 z-20 text-white bg-brand-500 hover:bg-brand-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-3 py-1 mr-2 dark:bg-brand-100 dark:hover:bg-brand-300 focus:outline-none dark:focus:ring-brand-800 leading-8"
+          >
+            <i class="las la-search"></i>
+          </a>
+        </div>
+      </div> -->
+
+      <!--/ search  -->
+
+    <!-- </div>
+  </div>
+</div> -->
+
+<!--/ Header Hero -->
+
+{{> layout-footer}}
