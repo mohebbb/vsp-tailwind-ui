@@ -12,7 +12,7 @@
   <title>monjiTV</title>
 </head>
 
-<body class="w-full h-full flex items-center flex-col">
+<body class="w-full h-full flex items-center flex-col" x-data="$store.menubar" :class="open ? 'overflow-hidden' : 'overflow-auto'">
   <div class="w-[90%] flex justify-center flex-col items-center gap-5">
     <!-- navigation -->
     {{> navigation}}

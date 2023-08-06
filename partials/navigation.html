@@ -1,24 +1,135 @@
-<div class="w-full bg-white pt-5 px-2" >
-  <div class="flex flex-row items-center justify-between">
+<div class="w-full bg-white pt-5 px-2">
+  <div class="flex flex-row items-end justify-between">
     <!-- logo -->
-    <div>
+    <div class="order-2 md:order-1">
       <a href="#">
-        <img src="public\img\logo.png" alt="MONJI-TV">
+        <img src="public\img\logo.png" alt="MONJI-TV" />
       </a>
     </div>
-  
-    <!-- navbar -->
-    <div class="flex flex-1 justify-center gap-4">
+
+    <!-- navbar for md or more -->
+    <nav class="hidden md:flex md:order-2 justify-center gap-4">
       <a href="#" class="mx-1 px-3 py-1 rounded-full hover:bg-slate-200">خانه</a>
       <a href="#" class="mx-1 px-3 py-1 rounded-full hover:bg-slate-200">ویدئو</a>
       <a href="#" class="mx-1 px-3 py-1 rounded-full hover:bg-slate-200">پخش زنده</a>
       <a href="#" class="mx-1 px-3 py-1 rounded-full hover:bg-slate-200">بلاگ</a>
       <a href="#" class="mx-1 px-3 py-1 rounded-full hover:bg-slate-200">دربارهٔ ما</a>
-    </div>
-  
-    <!-- left box -->
-    <div class="flex items-center justify-between gap-2">
+    </nav>
 
+    <!-- navbar for mobile -->
+    <div class="md:hidden">
+      <button class="flex items-center bg-slate-200 rounded-md w-9 h-9 justify-center" @click="toggle()"><i class="fa-solid fa-bars"></i></button>
+
+      <nav class="bg-white w-64 h-full px-6 pt-10 order-1 absolute top-0 right-0 z-50 flex flex-col gap-8" x-show="open" @click.outside="open = false">
+        <!-- close & logo -->
+        <div class="relative flex justify-center">
+          <!-- close -->
+          <button class="absolute -left-2 bottom-full" @click="toggle()"><i class="fa-solid fa-close fa-xl"></i></button>
+
+          <!-- logo -->
+          <a href="#">
+            <img src="public\img\logo.png" alt="MONJI-TV" />
+          </a>
+        </div>
+        
+        <!-- search -->
+        <form action="#" class="flex items-center justify-center bg-slate-200 rounded-full w-full h-9 px-3">
+          <input class="bg-inherit focus:outline-0 w-full" type="text" name="" id="">
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+
+        <!-- tools box -->
+        <div class="flex flex-col gap-4 py-6 border-t border-b border-black/50 font-bold">
+          <!-- Fa -->
+          <a href="#" class="flex items-center gap-2">
+            <div class="flex items-center bg-slate-200 rounded-full w-9 h-9 justify-center font-normal">
+              Fa
+            </div>
+            <p>تغییر زبان</p>
+          </a>
+
+          <!-- dark & bright -->
+          <a href="#" class="flex items-center gap-2">
+            <div class="flex items-center bg-slate-200 rounded-full w-9 h-9 justify-center">
+              <i class="fa-regular fa-sun"></i>
+            </div>
+            <p>حالت تاریک</p>
+            <!-- <p>حالت روشن</p> -->
+          </a>
+        </div>
+
+        <!-- nav -->
+        <div class="flex flex-col gap-4 font-bold">
+
+          <!-- home -->
+          <a href="#">
+            <div class="flex flex-row items-center gap-2 h-8 p-2 hover:bg-black/30">
+              <!-- icon -->
+              <span class="w-6 flex justify-center items-center">
+                <i class="fa-solid fa-house"></i>
+              </span>
+              <!-- title -->
+              <p>خانه</p>
+            </div>
+          </a>
+
+          <!-- videw -->
+          <a href="#">
+            <div class="flex flex-row items-center gap-2 h-8 p-2 hover:bg-black/30">
+              <!-- icon -->
+              <span class="w-6 flex justify-center items-center">
+                <i class="fa-solid fa-video"></i>
+              </span>
+              <!-- title -->
+              <p>ویدئو</p>
+            </div>
+          </a>
+
+          <!-- live -->
+          <a href="#">
+            <div class="flex flex-row items-center gap-2 h-8 p-2 hover:bg-black/30">
+              <!-- icon -->
+              <span class="w-6 flex justify-center items-center">
+                <i class="fa-solid fa-satellite-dish"></i>
+              </span>
+              <!-- title -->
+              <p>پخش زنده</p>
+            </div>
+          </a>
+
+          <!-- blog -->
+          <a href="#">
+            <div class="flex flex-row items-center gap-2 h-8 p-2 hover:bg-black/30">
+              <!-- icon -->
+              <span class="w-6 flex justify-center items-center">
+                <i class="fa-brands fa-blogger-b"></i>
+              </span>
+              <!-- title -->
+              <p>بلاگ</p>
+            </div>
+          </a>
+
+          <!-- about us -->
+          <a href="#">
+            <div class="flex flex-row items-center gap-2 h-8 p-2 hover:bg-black/30">
+              <!-- icon -->
+              <span class="w-6 flex justify-center items-center">
+                <i class="fa-solid fa-circle-info"></i>
+              </span>
+              <!-- title -->
+              <p>دربارهٔ ما</p>
+            </div>
+          </a>
+
+        </div>
+      </nav>
+
+      <span class="w-full h-full bg-black/50 absolute top-0 right-0 z-40 md:hidden" x-show="open"></span>
+
+    </div>
+
+    <!-- tools box for md or more-->
+    <div class="hidden md:flex order-3 items-center justify-between gap-2">
       <!-- search -->
       <a href="#">
         <div class="flex items-center bg-slate-200 rounded-full w-9 h-9 justify-center">
@@ -33,7 +144,7 @@
           Fa
         </div>
       </a>
-      
+
       <!-- dark & bright -->
       <a href="#">
         <div class="flex items-center bg-slate-200 rounded-full w-9 h-9 justify-center">
@@ -44,10 +155,20 @@
       <!-- profile -->
       <a href="#">
         <div class="flex items-center bg-[#e71e2a] rounded-full w-9 h-9 justify-center">
-          <i class="fa-regular fa-user"></i> 
+          <i class="fa-regular fa-user"></i>
         </div>
       </a>
-      
     </div>
+
+    <!-- tools box for mobile -->
+    <!-- profile is here / search box & fa & dark mode in the menu -->
+    <div class="order-3 md:hidden">
+      <a href="#">
+        <div class="flex items-center bg-[#e71e2a] rounded-full w-9 h-9 justify-center">
+          <i class="fa-regular fa-user"></i>
+        </div>
+      </a>
+    </div>
+
   </div>
 </div>
