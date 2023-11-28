@@ -11,20 +11,13 @@ window.Alpine = Alpine
 
 // include components
 
-// Alpine.data('mobile_menu', mobile_menu)
-// Alpine.data('popup', popup)
-// Alpine.data('tabs', tabs)
-// Alpine.data('sticky', sticky)
-// Alpine.data('more_btn', more_btn)
-// Alpine.data('accordion', accordion)
+Alpine.data('mobile_menu', mobile_menu)
+Alpine.data('popup', popup)
+Alpine.data('tabs', tabs)
+Alpine.data('sticky', sticky)
+Alpine.data('more_btn', more_btn)
+Alpine.data('accordion', accordion)
 
-Alpine.store('menubar', {
-    open: false,
- 
-    toggle() {
-        this.open = ! this.open
-    }
-})
  
 
 Alpine.start()

@@ -1,174 +1,83 @@
-<div class="w-full bg-white pt-5 px-2">
-  <div class="flex flex-row items-end justify-between">
-    <!-- logo -->
-    <div class="order-2 md:order-1">
-      <a href="#">
-        <img src="public\img\logo.png" alt="MONJI-TV" />
-      </a>
-    </div>
+<div x-data="mobile_menu" class="flex flex-col items-center">
+    <nav class="container relative flex flex-row justify-between items-center py-6 px-8">
 
-    <!-- navbar for md or more -->
-    <nav class="hidden md:flex md:order-2 justify-center gap-4">
-      <a href="#" class="mx-1 px-3 py-1 rounded-full hover:bg-slate-200">خانه</a>
-      <a href="#" class="mx-1 px-3 py-1 rounded-full hover:bg-slate-200">ویدئو</a>
-      <a href="#" class="mx-1 px-3 py-1 rounded-full hover:bg-slate-200">پخش زنده</a>
-      <a href="#" class="mx-1 px-3 py-1 rounded-full hover:bg-slate-200">بلاگ</a>
-      <a href="#" class="mx-1 px-3 py-1 rounded-full hover:bg-slate-200">دربارهٔ ما</a>
+        <!-- menu -->
+        <div class="hidden md:flex flex-row gap-5 font-medium text-gray-500">
+            <a class="font-semibold text-brand-1" href="#">مجله</a>
+            <a class="hover:text-brand-1" href="#">آکادمی</a>
+            <a class="hover:text-brand-1" href="#">رسانه رشد</a>
+            <a class="hover:text-brand-1" href="pages/book-introduction/index.html">معرفی کتاب</a>
+        </div>
+        <div>
+            <button @click="toggle" type="button"
+                class="mr-1 inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                aria-controls="mega-menu" aria-expanded="false">
+                <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- logo -->
+        <div class="absolute right-[50%] translate-x-[50%]">
+            <a href="#">
+                <!-- <div class=" bg-white/90 rounded-xl py-3 px-6"> -->
+                <img class="w-16" src="img/nasleno-logo-black.svg" alt="">
+                <!-- </div> -->
+            </a>
+        </div>
+
+        <!-- user -->
+        <a href="#">
+            <div class="flex flex-row gap-4">
+                <a class="font-normal text-gray-500 hover:text-brand-1" href="">ورود</a>
+                <p>|</p>
+                <a class="font-normal text-gray-500 hover:text-brand-1" href="">ثبت نام</a>
+            </div>
+            <!-- <div>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-8 h-8 stroke-black">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+            </div> -->
+        </a>
+
     </nav>
-
-    <!-- navbar for mobile -->
-    <div class="md:hidden">
-      <button class="flex items-center bg-slate-200 rounded-md w-9 h-9 justify-center" @click="toggle()"><i class="fa-solid fa-bars"></i></button>
-
-      <nav class="bg-white w-64 h-full px-6 pt-10 order-1 absolute top-0 right-0 z-50 flex flex-col gap-8" x-show="open" @click.outside="open = false">
-        <!-- close & logo -->
-        <div class="relative flex justify-center">
-          <!-- close -->
-          <button class="absolute -left-2 bottom-full" @click="toggle()"><i class="fa-solid fa-close fa-xl"></i></button>
-
-          <!-- logo -->
-          <a href="#">
-            <img src="public\img\logo.png" alt="MONJI-TV" />
-          </a>
+    
+    <!-- mobile menu -->
+    <div x-show="mobile_menu" class="bg-gray-600 bg-opacity-20 fixed z-40 h-screen w-screen top-0">
+        <div x-show="open" x-transition:enter="transition ease-in-out duration-200 transform"
+            x-transition:enter-start="translate-x-5 opacity-0" x-transition:enter-end="translate-x-0 opacity-100"
+            x-transition:leave="transition ease-in-out duration-200" x-transition:leave-start="opacity-100"
+            x-transition:leave-end="translate-x-5 opacity-0" @click.away="toggle"
+            class="fixed z-50 h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-gray-800" tabindex="-1"
+            aria-labelledby="drawer-disable-body-scrolling-label">
+            <h5 id="drawer-disable-body-scrolling-label"
+                class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
+                منو
+            </h5>
+            <button @click="close" type="button" aria-controls="drawer-disable-body-scrolling"
+                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 left-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
+            <div class="py-4 overflow-y-auto">
+                <div class="space-y-2 flex flex-col">
+                    <a class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700" href="#">مجله</a>
+                    <a class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700" href="#">آکادمی</a>
+                    <a class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700" href="#">رسانه رشد</a>
+                    <a class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700" href="#">معرفی کتاب</a>
+                </div>
+            </div>
         </div>
-        
-        <!-- search -->
-        <form action="#" class="flex items-center justify-center bg-slate-200 rounded-full w-full h-9 px-3">
-          <input class="bg-inherit focus:outline-0 w-full" type="text" name="" id="">
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
-
-        <!-- tools box -->
-        <div class="flex flex-col gap-4 py-6 border-t border-b border-black/50 font-bold">
-          <!-- Fa -->
-          <a href="#" class="flex items-center gap-2">
-            <div class="flex items-center bg-slate-200 rounded-full w-9 h-9 justify-center font-normal">
-              Fa
-            </div>
-            <p>تغییر زبان</p>
-          </a>
-
-          <!-- dark & bright -->
-          <a href="#" class="flex items-center gap-2">
-            <div class="flex items-center bg-slate-200 rounded-full w-9 h-9 justify-center">
-              <i class="fa-regular fa-sun"></i>
-            </div>
-            <p>حالت تاریک</p>
-            <!-- <p>حالت روشن</p> -->
-          </a>
-        </div>
-
-        <!-- nav -->
-        <div class="flex flex-col gap-4 font-bold">
-
-          <!-- home -->
-          <a href="#">
-            <div class="flex flex-row items-center gap-2 h-8 p-2 hover:bg-black/30">
-              <!-- icon -->
-              <span class="w-6 flex justify-center items-center">
-                <i class="fa-solid fa-house"></i>
-              </span>
-              <!-- title -->
-              <p>خانه</p>
-            </div>
-          </a>
-
-          <!-- videw -->
-          <a href="#">
-            <div class="flex flex-row items-center gap-2 h-8 p-2 hover:bg-black/30">
-              <!-- icon -->
-              <span class="w-6 flex justify-center items-center">
-                <i class="fa-solid fa-video"></i>
-              </span>
-              <!-- title -->
-              <p>ویدئو</p>
-            </div>
-          </a>
-
-          <!-- live -->
-          <a href="#">
-            <div class="flex flex-row items-center gap-2 h-8 p-2 hover:bg-black/30">
-              <!-- icon -->
-              <span class="w-6 flex justify-center items-center">
-                <i class="fa-solid fa-satellite-dish"></i>
-              </span>
-              <!-- title -->
-              <p>پخش زنده</p>
-            </div>
-          </a>
-
-          <!-- blog -->
-          <a href="#">
-            <div class="flex flex-row items-center gap-2 h-8 p-2 hover:bg-black/30">
-              <!-- icon -->
-              <span class="w-6 flex justify-center items-center">
-                <i class="fa-brands fa-blogger-b"></i>
-              </span>
-              <!-- title -->
-              <p>بلاگ</p>
-            </div>
-          </a>
-
-          <!-- about us -->
-          <a href="#">
-            <div class="flex flex-row items-center gap-2 h-8 p-2 hover:bg-black/30">
-              <!-- icon -->
-              <span class="w-6 flex justify-center items-center">
-                <i class="fa-solid fa-circle-info"></i>
-              </span>
-              <!-- title -->
-              <p>دربارهٔ ما</p>
-            </div>
-          </a>
-
-        </div>
-      </nav>
-
-      <span class="w-full h-full bg-black/50 absolute top-0 right-0 z-40 md:hidden" x-show="open"></span>
-
     </div>
-
-    <!-- tools box for md or more-->
-    <div class="hidden md:flex order-3 items-center justify-between gap-2">
-      <!-- search -->
-      <a href="#">
-        <div class="flex items-center bg-slate-200 rounded-full w-9 h-9 justify-center">
-          <!-- <input class="bg-inherit focus:outline-0 w-full" type="text" name="" id=""> -->
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-      </a>
-
-      <!-- Fa -->
-      <a href="#">
-        <div class="flex items-center bg-slate-200 rounded-full w-9 h-9 justify-center">
-          Fa
-        </div>
-      </a>
-
-      <!-- dark & bright -->
-      <a href="#">
-        <div class="flex items-center bg-slate-200 rounded-full w-9 h-9 justify-center">
-          <i class="fa-regular fa-sun"></i>
-        </div>
-      </a>
-
-      <!-- profile -->
-      <a href="#">
-        <div class="flex items-center bg-[#e71e2a] rounded-full w-9 h-9 justify-center">
-          <i class="fa-regular fa-user"></i>
-        </div>
-      </a>
-    </div>
-
-    <!-- tools box for mobile -->
-    <!-- profile is here / search box & fa & dark mode in the menu -->
-    <div class="order-3 md:hidden">
-      <a href="#">
-        <div class="flex items-center bg-[#e71e2a] rounded-full w-9 h-9 justify-center">
-          <i class="fa-regular fa-user"></i>
-        </div>
-      </a>
-    </div>
-
-  </div>
+    <!-- mobile menu -->
 </div>

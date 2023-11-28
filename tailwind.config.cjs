@@ -9,7 +9,10 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {},
+      colors: {
+        'brand-1': '#16c777',
+        'brand-2': '#263051',
+      },
       backgroundImage: {},
       variants: {
         space: ['responsive', 'direction'],

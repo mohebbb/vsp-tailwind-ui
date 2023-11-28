@@ -1,6 +1,31 @@
 {{> footer}}
 
-</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mediaSwiper", {
+        slidesPerView: "auto",
+        spaceBetween: 15,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+
+    });
+</script>
+
+<script>
+    var swiper = new Swiper(".bookSwiper", {
+        slidesPerView: "auto",
+        spaceBetween: 15,
+        // pagination: {
+        //     el: ".swiper-pagination",
+        //     clickable: true,
+        // }
+    });
+</script>
+
 </body>
 <script type="module" src="/main.js"></script>
 <script src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>
